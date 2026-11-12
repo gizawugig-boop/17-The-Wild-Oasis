@@ -6,7 +6,8 @@ import { useOutsideClick } from "../hooks/useOutsideClick";
 
 const StyledModal = styled.div`
   position: relative;
-  width: min(88rem, 100%);
+  width: ${({ $size }) =>
+    $size === "small" ? "min(44rem, 100%)" : "min(88rem, 100%)"};
   max-height: calc(100vh - 3.2rem);
   overflow-y: auto;
   background-color: var(--color-grey-0);
@@ -84,20 +85,25 @@ function Open({ children, opens: opensWindowName }) {
   return cloneElement(children, { onClick: () => open(opensWindowName) });
 }
 
-function Window({ children, name }) {
+function Window({ children, name, size, isOpen: isOpenProp, onClose }) {
   const { openName, close } = useContext(ModalContext);
-  const ref = useOutsideClick(close);
+  const handleClose = () => {
+    close();
+    onClose?.();
+  };
+  const ref = useOutsideClick(handleClose);
+  const isOpen = isOpenProp ?? name === openName;
 
-  if (name !== openName) return null;
+  if (!isOpen) return null;
 
   return createPortal(
     <Overlay>
-      <StyledModal ref={ref}>
-        <Button onClick={close}>
+      <StyledModal ref={ref} $size={size}>
+        <Button onClick={handleClose} aria-label="Close dialog">
           <HiXMark />
         </Button>
 
-        <div>{cloneElement(children, { onCloseModal: close })}</div>
+        <div>{cloneElement(children, { onCloseModal: handleClose })}</div>
       </StyledModal>
     </Overlay>,
     document.body,

@@ -8,7 +8,7 @@ import { useSignup } from "./useSignup";
 
 // Email regex: /\S+@\S+\.\S+/
 
-function SignupForm({ onCancel }) {
+function SignupForm({ onCancel, onSignupSuccess }) {
   const { signup, isPending } = useSignup();
   const { register, formState, getValues, handleSubmit, reset } = useForm();
   const { errors } = formState;
@@ -17,8 +17,9 @@ function SignupForm({ onCancel }) {
     signup(
       { fullName, email, password },
       {
-        onSuccess: () => {
+        onSuccess: (data) => {
           reset();
+          onSignupSuccess?.({ email, requiresVerification: !data.session });
           onCancel?.();
         },
         onSettled: () => reset(),

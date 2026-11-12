@@ -9,11 +9,17 @@ export function useSignup() {
     mutationFn: signupApi,
     onSuccess: () => {
       queryClient.setQueryData(["user"], null);
-      toast.success(
-        "Account successfully created! Please verify the new account from the user's email address.",
-      );
+      toast.success("Account created successfully.");
     },
     onError: (err) => {
+      if (err.message?.toLowerCase().includes("rate limit exceeded")) {
+        toast.error(
+          "Too many signup emails have been sent. Please wait before trying again, or contact the administrator to configure email delivery.",
+          { duration: 7000 },
+        );
+        return;
+      }
+
       toast.error(err.message || "Could not create account");
     },
   });

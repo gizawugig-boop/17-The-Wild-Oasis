@@ -6,10 +6,10 @@ import FormRowVertical from "../../ui/FormRowVertical";
 import { useLogin } from "./useLogin";
 import SpinnerMini from "../../ui/SpinnerMini";
 
-function LoginForm() {
+function LoginForm({ onEmailNotConfirmed }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login, isPending } = useLogin();
+  const { login, isPending } = useLogin({ onEmailNotConfirmed });
 
   function handleSubmit(e) {
     e.preventDefault();

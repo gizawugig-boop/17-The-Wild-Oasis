@@ -33,6 +33,18 @@ export async function login({ email, password }) {
   return data;
 }
 
+export async function verifySignupOtp({ email, token }) {
+  const { data, error } = await supabase.auth.verifyOtp({
+    email,
+    token,
+    type: "signup",
+  });
+
+  if (error) throw new Error(error.message);
+
+  return data;
+}
+
 export async function getCurrentUser() {
   const { data: session } = await supabase.auth.getSession();
   if (!session.session) return null;

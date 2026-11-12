@@ -3,7 +3,7 @@ import { login as loginApi } from "../../services/apiAuth";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
-export function useLogin() {
+export function useLogin({ onEmailNotConfirmed } = {}) {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
@@ -13,11 +13,10 @@ export function useLogin() {
       queryClient.setQueryData(["user"], user.user);
       navigate("/dashboard", { replace: true });
     },
-    onError: (err) => {
+    onError: (err, variables) => {
       if (err.message?.toLowerCase().includes("email not confirmed")) {
-        toast.error(
-          "Please confirm your email address using the verification link we sent before logging in.",
-        );
+        onEmailNotConfirmed?.(variables.email);
+        toast.error("Enter the code sent to your email to verify your account.");
         return;
       }
 
