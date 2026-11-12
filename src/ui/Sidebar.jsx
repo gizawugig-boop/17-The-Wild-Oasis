@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Logo from "./Logo";
 import MainNav from "./MainNav";
 import { HiOutlineXMark } from "react-icons/hi2";
+// import Uploader from "../data/Uploader";
 
 const StyledSidebar = styled.aside`
   background-color: var(--color-grey-0);
@@ -45,10 +46,7 @@ const SidebarTop = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
-<<<<<<< HEAD
 
-=======
->>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 const SidebarToggleButton = styled.button`
   display: inline-flex;
   align-items: center;
@@ -78,7 +76,10 @@ function Sidebar({ isOpen, onClose, onToggleSidebar }) {
         </SidebarToggleButton>
       </SidebarTop>
       <MainNav onClose={onClose} />
+      {/* <Uploader /> */}
+
     </StyledSidebar>
+    
   );
 }
 

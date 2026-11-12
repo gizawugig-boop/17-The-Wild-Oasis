@@ -11,14 +11,11 @@ const DashboardBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-<<<<<<< HEAD
 
   @media (max-width: 640px) {
     padding: 2rem;
     gap: 1.6rem;
   }
-=======
->>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 `;
 
 export default DashboardBox;

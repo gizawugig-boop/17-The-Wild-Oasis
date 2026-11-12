@@ -25,7 +25,6 @@ const StyledFormRow = styled.div`
     justify-content: flex-end;
     gap: 1.2rem;
   }
-<<<<<<< HEAD
 
   @media (max-width: 768px) {
     grid-template-columns: minmax(0, 1fr);
@@ -36,8 +35,6 @@ const StyledFormRow = styled.div`
       justify-content: flex-end;
     }
   }
-=======
->>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 `;
 
 const Label = styled.label`
