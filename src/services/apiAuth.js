@@ -14,11 +14,14 @@ export async function signup({ fullName, email, password }) {
 
   if (error) throw new Error(error.message);
 
+<<<<<<< HEAD
   if (data.session) {
     const { error: signOutError } = await supabase.auth.signOut();
     if (signOutError) throw new Error(signOutError.message);
   }
 
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
   return data;
 }
 

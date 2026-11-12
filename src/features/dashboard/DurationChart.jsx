@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 import styled from "styled-components";
 import Heading from "../../ui/Heading";
 import {
@@ -19,7 +22,10 @@ const ChartBox = styled.div`
 
   padding: 2.4rem 3.2rem;
   grid-column: 3 / span 2;
+<<<<<<< HEAD
   min-width: 0;
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 
   & > *:first-child {
     margin-bottom: 1.6rem;
@@ -28,6 +34,7 @@ const ChartBox = styled.div`
   & .recharts-pie-label-text {
     font-weight: 600;
   }
+<<<<<<< HEAD
 
   @media (max-width: 1024px) {
     grid-column: 1 / -1;
@@ -36,6 +43,8 @@ const ChartBox = styled.div`
   @media (max-width: 640px) {
     padding: 2rem;
   }
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 `;
 
 const startDataLight = [
@@ -155,6 +164,7 @@ function DurationChart({ confirmedStays }) {
   const { isDarkMode } = useDarkMode();
   const startData = isDarkMode ? startDataDark : startDataLight;
   const data = prepareData(startData, confirmedStays);
+<<<<<<< HEAD
   const [isSmallScreen, setIsSmallScreen] = useState(() =>
     window.matchMedia("(max-width: 640px)").matches,
   );
@@ -166,20 +176,33 @@ function DurationChart({ confirmedStays }) {
     mediaQuery.addEventListener("change", updateScreenSize);
     return () => mediaQuery.removeEventListener("change", updateScreenSize);
   }, []);
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 
   return (
     <ChartBox>
       <Heading as="h2">Stay duration summary</Heading>
+<<<<<<< HEAD
       <ResponsiveContainer width="100%" height={isSmallScreen ? 280 : 240}>
+=======
+      <ResponsiveContainer width="100%" height={240}>
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
         <PieChart>
           <Pie
             data={data}
             nameKey="duration"
             dataKey="value"
+<<<<<<< HEAD
             innerRadius={isSmallScreen ? 40 : 85}
             outerRadius={isSmallScreen ? 56 : 110}
             cx={isSmallScreen ? "28%" : "40%"}
             cy={isSmallScreen ? "42%" : "50%"}
+=======
+            innerRadius={85}
+            outerRadius={110}
+            cx="40%"
+            cy="50%"
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
             paddingAngle={3}
           >
             {data.map((entry) => (
@@ -194,9 +217,15 @@ function DurationChart({ confirmedStays }) {
           <Legend
             verticalAlign="middle"
             align="right"
+<<<<<<< HEAD
             width={isSmallScreen ? "45%" : "30%"}
             layout="vertical"
             iconSize={isSmallScreen ? 10 : 15}
+=======
+            width="30%"
+            layout="vertical"
+            iconSize={15}
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
             iconType="circle"
           />
         </PieChart>

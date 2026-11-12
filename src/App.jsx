@@ -7,7 +7,10 @@ import GlobalStyles from "./styles/GlobalStyles";
 import Dashboard from "./pages/Dashboard";
 import Bookings from "./pages/Bookings";
 import Cabins from "./pages/Cabins";
+<<<<<<< HEAD
 import CabinDetails from "./pages/CabinDetails";
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 import Users from "./pages/Users";
 import Settings from "./pages/Settings";
 import Account from "./pages/Account";
@@ -54,7 +57,10 @@ function App() {
               <Route path="bookings/:bookingId" element={<Booking />} />
               <Route path="checkin/:bookingId" element={<Checkin />} />
               <Route path="cabins" element={<Cabins />} />
+<<<<<<< HEAD
               <Route path="cabins/:cabinId" element={<CabinDetails />} />
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
               <Route path="users" element={<Users />} />
               <Route path="settings" element={<Settings />} />
               <Route path="account" element={<Account />} />

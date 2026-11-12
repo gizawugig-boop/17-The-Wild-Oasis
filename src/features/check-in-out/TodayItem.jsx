@@ -8,7 +8,11 @@ import CheckoutButton from "./CheckoutButton";
 
 const StyledTodayItem = styled.li`
   display: grid;
+<<<<<<< HEAD
   grid-template-columns: 9rem minmax(0, 1fr) 7rem 9rem;
+=======
+  grid-template-columns: 9rem 2rem 1fr 7rem 9rem;
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
   gap: 1.2rem;
   align-items: center;
 
@@ -19,6 +23,7 @@ const StyledTodayItem = styled.li`
   &:first-child {
     border-top: 1px solid var(--color-grey-100);
   }
+<<<<<<< HEAD
 
   @media (max-width: 640px) {
     grid-template-columns: minmax(0, 1fr) auto;
@@ -36,10 +41,13 @@ const GuestDetails = styled.div`
     grid-column: 1 / -1;
     grid-row: 2;
   }
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 `;
 
 const Guest = styled.div`
   font-weight: 500;
+<<<<<<< HEAD
   min-width: 0;
   overflow-wrap: anywhere;
 `;
@@ -63,6 +71,8 @@ const Action = styled.div`
     grid-row: 1 / span 3;
     justify-self: end;
   }
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 `;
 
 function TodayItem({ activity }) {
@@ -70,6 +80,7 @@ function TodayItem({ activity }) {
 
   return (
     <StyledTodayItem>
+<<<<<<< HEAD
       <Status>
         {status === "unconfirmed" && <Tag type="green">Arriving</Tag>}
         {status === "checked-in" && <Tag type="blue">Departing</Tag>}
@@ -92,6 +103,26 @@ function TodayItem({ activity }) {
         )}
         {status === "checked-in" && <CheckoutButton bookingId={id} />}
       </Action>
+=======
+      {status === "unconfirmed" && <Tag type="green">Arriving</Tag>}
+      {status === "checked-in" && <Tag type="blue">Departing</Tag>}
+
+      <Flag src={guests.countryFlag} alt={`Flag of ${guests.country}`} />
+      <Guest>{guests.fullName}</Guest>
+      <div>{numNights} nights</div>
+
+      {status === "unconfirmed" && (
+        <Button
+          $size="small"
+          $variation="primary"
+          as={Link}
+          to={`/checkin/${id}`}
+        >
+          Check in
+        </Button>
+      )}
+      {status === "checked-in" && <CheckoutButton bookingId={id} />}
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
     </StyledTodayItem>
   );
 }

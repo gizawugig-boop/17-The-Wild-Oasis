@@ -19,6 +19,7 @@ const StyledToday = styled.div`
   gap: 2.4rem;
   grid-column: 1 / span 2;
   padding-top: 2.4rem;
+<<<<<<< HEAD
   min-width: 0;
 
   @media (max-width: 640px) {
@@ -26,12 +27,17 @@ const StyledToday = styled.div`
     padding: 2rem;
     gap: 1.6rem;
   }
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 `;
 
 const TodayList = styled.ul`
   overflow: scroll;
   overflow-x: hidden;
+<<<<<<< HEAD
   min-width: 0;
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 
   /* Removing scrollbars for webkit, firefox, and ms, respectively */
   &::-webkit-scrollbar {

@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 import styled from "styled-components";
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 import TableOperations from "../../ui/TableOperations";
 import Filter from "../../ui/Filter";
 import SortBy from "../../ui/SortBy";
 
+<<<<<<< HEAD
 const CabinOperations = styled(TableOperations)`
   min-width: 0;
 
@@ -44,6 +48,11 @@ const CabinOperations = styled(TableOperations)`
 function CabinTableOperations() {
   return (
     <CabinOperations>
+=======
+function CabinTableOperations() {
+  return (
+    <TableOperations>
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
       <Filter
         filterField="discount"
         options={[
@@ -63,7 +72,11 @@ function CabinTableOperations() {
           { value: "maxCapacity-desc", label: "Sort by capacity (high first)" },
         ]}
       />
+<<<<<<< HEAD
     </CabinOperations>
+=======
+    </TableOperations>
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
   );
 }
 

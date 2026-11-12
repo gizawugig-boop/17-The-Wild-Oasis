@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { createContext, useContext, useLayoutEffect, useState } from "react";
+=======
+import { createContext, useContext, useState } from "react";
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 import { createPortal } from "react-dom";
 import { HiEllipsisVertical } from "react-icons/hi2";
 import styled from "styled-components";
@@ -31,21 +35,28 @@ const StyledToggle = styled.button`
 
 const StyledList = styled.ul`
   position: fixed;
+<<<<<<< HEAD
   z-index: 1100;
   min-width: 18rem;
   max-width: calc(100vw - 1.6rem);
   max-height: calc(100vh - 1.6rem);
   overflow-y: auto;
+=======
+
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
   background-color: var(--color-grey-0);
   box-shadow: var(--shadow-md);
   border-radius: var(--border-radius-md);
 
   right: ${({ $position }) => $position.x}px;
   top: ${({ $position }) => $position.y}px;
+<<<<<<< HEAD
 
   @supports (height: 100dvh) {
     max-height: calc(100dvh - 1.6rem);
   }
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 `;
 
 const StyledButton = styled.button`
@@ -98,10 +109,15 @@ function Toggle({ id }) {
     e.stopPropagation();
     const rect = e.target.closest("button").getBoundingClientRect();
     setPosition({
+<<<<<<< HEAD
       x: Math.max(8, window.innerWidth - rect.right),
       y: rect.bottom + 8,
       anchorTop: rect.top,
       anchorBottom: rect.bottom,
+=======
+      x: window.innerWidth - rect.width - rect.x,
+      y: rect.y + rect.height + 8,
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
     });
 
     openId === "" || openId !== id ? open(id) : close();
@@ -115,6 +131,7 @@ function Toggle({ id }) {
 }
 
 function List({ id, children }) {
+<<<<<<< HEAD
   const { openId, position, close, setPosition } = useContext(MenusContext);
   const ref = useOutsideClick(close, false);
 
@@ -137,6 +154,11 @@ function List({ id, children }) {
     }
   }, [id, openId, position, setPosition, ref]);
 
+=======
+  const { openId, position, close } = useContext(MenusContext);
+  const ref = useOutsideClick(close, false);
+
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
   if (openId !== id) return null;
 
   return createPortal(

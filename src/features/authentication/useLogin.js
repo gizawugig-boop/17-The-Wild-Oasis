@@ -14,6 +14,7 @@ export function useLogin() {
       navigate("/dashboard", { replace: true });
     },
     onError: (err) => {
+<<<<<<< HEAD
       if (err.message?.toLowerCase().includes("email not confirmed")) {
         toast.error(
           "Please confirm your email address using the verification link we sent before logging in.",
@@ -21,6 +22,9 @@ export function useLogin() {
         return;
       }
 
+=======
+      console.log("ERROR", err);
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
       toast.error("Provided email or password are incorrect");
     },
   });

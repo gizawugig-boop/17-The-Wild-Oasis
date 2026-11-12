@@ -5,15 +5,23 @@ import styled from "styled-components";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 
 const StyledModal = styled.div`
+<<<<<<< HEAD
   position: relative;
   width: min(88rem, 100%);
   max-height: calc(100vh - 3.2rem);
   overflow-y: auto;
+=======
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
   background-color: var(--color-grey-0);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
   padding: 3.2rem 4rem;
   transition: all 0.5s;
+<<<<<<< HEAD
 
   @supports (height: 100dvh) {
     max-height: calc(100dvh - 3.2rem);
@@ -22,20 +30,32 @@ const StyledModal = styled.div`
   @media (max-width: 640px) {
     padding: 2.8rem 1.6rem 1.6rem;
   }
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 `;
 
 const Overlay = styled.div`
   position: fixed;
+<<<<<<< HEAD
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.6rem;
+=======
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
   background-color: var(--backdrop-color);
   backdrop-filter: blur(4px);
   z-index: 1000;
   transition: all 0.5s;
+<<<<<<< HEAD
   overflow-y: auto;
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 `;
 
 const Button = styled.button`

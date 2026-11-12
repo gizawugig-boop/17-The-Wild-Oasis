@@ -7,6 +7,7 @@ function Logout() {
   const { logout, isPending } = useLogout();
 
   return (
+<<<<<<< HEAD
     <ButtonIcon
       type="button"
       aria-label="Log out"
@@ -14,6 +15,9 @@ function Logout() {
       disabled={isPending}
       onClick={logout}
     >
+=======
+    <ButtonIcon disabled={isPending} onClick={logout}>
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
       {!isPending ? <HiArrowRightOnRectangle /> : <SpinnerMini />}
     </ButtonIcon>
   );

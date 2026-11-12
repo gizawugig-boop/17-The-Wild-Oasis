@@ -9,7 +9,10 @@ import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 
 // const TableRow = styled.div`
 //   display: grid;
@@ -23,6 +26,7 @@ import { Link } from "react-router-dom";
 //   }
 // `;
 
+<<<<<<< HEAD
 const CabinImageLink = styled(Link)`
   display: block;
   width: fit-content;
@@ -51,6 +55,8 @@ const CabinTableRow = styled(Table.Row)`
   }
 `;
 
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 const Img = styled.img`
   display: block;
   width: 6.4rem;
@@ -104,6 +110,7 @@ function CabinRow({ cabin }) {
   }
 
   return (
+<<<<<<< HEAD
     <CabinTableRow>
       <CabinImageLink
         to={`/cabins/${cabinId}`}
@@ -111,6 +118,10 @@ function CabinRow({ cabin }) {
       >
         <Img src={image} alt={name} />
       </CabinImageLink>
+=======
+    <Table.Row>
+      <Img src={image} />
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
       <Cabin>{name}</Cabin>
       <div>Fits up to {maxCapacity} guests</div>
       <Price>{formatCurrency(regularPrice)}</Price>
@@ -156,7 +167,11 @@ function CabinRow({ cabin }) {
           </Menus.Menu>
         </Modal>
       </div>
+<<<<<<< HEAD
     </CabinTableRow>
+=======
+    </Table.Row>
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
   );
 }
 

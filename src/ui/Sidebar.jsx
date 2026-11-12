@@ -45,7 +45,10 @@ const SidebarTop = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 const SidebarToggleButton = styled.button`
   display: inline-flex;
   align-items: center;

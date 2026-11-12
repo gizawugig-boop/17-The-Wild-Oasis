@@ -16,12 +16,16 @@ function HeaderMenu() {
   return (
     <StyledHeaderMenu>
       <li>
+<<<<<<< HEAD
         <ButtonIcon
           type="button"
           aria-label="Account settings"
           title="Account settings"
           onClick={() => navigate("/account")}
         >
+=======
+        <ButtonIcon onClick={() => navigate("/account")}>
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
           <HiOutlineUser />
         </ButtonIcon>
       </li>

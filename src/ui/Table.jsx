@@ -9,7 +9,10 @@ const StyledTable = styled.div`
   overflow: hidden;
   overflow-x: auto;
   width: 100%;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
 `;
 
 const CommonRow = styled.div`
@@ -92,10 +95,17 @@ function Header({ children }) {
     </StyledHeader>
   );
 }
+<<<<<<< HEAD
 function Row({ children, className }) {
   const { columns } = useContext(TableContext);
   return (
     <StyledRow role="row" $columns={columns} className={className}>
+=======
+function Row({ children }) {
+  const { columns } = useContext(TableContext);
+  return (
+    <StyledRow role="row" $columns={columns}>
+>>>>>>> 3b240f893c42443adca2e8a7eb29c213ac421cad
       {children}
     </StyledRow>
   );
